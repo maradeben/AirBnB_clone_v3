@@ -80,7 +80,7 @@ class DBStorage:
         Args:
             cls(obeject): class
             id(str): string representing the object ID
-        
+
         Returns:
             the object based on class and ID, none if not found
         """
@@ -101,9 +101,9 @@ class DBStorage:
         count = 0
         for obj in all_objs:
             if cls is None:
-                count+=1
+                count += 1
             else:
                 if obj.startswith(cls.__name__):
-                    count+=1
+                    count += 1
 
-        return(count)
+        return (count)
