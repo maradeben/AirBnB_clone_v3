@@ -11,7 +11,7 @@ from models.user import User
 
 
 classes = {"amenities": Amenity, "cities": City,
-        "places": Place, "reviews": Review, "states": State, "users": User}
+           "places": Place, "reviews": Review, "states": State, "users": User}
 
 
 @app_views.route('/status')
@@ -19,10 +19,11 @@ def views_status():
     """ return status of views """
     return ({"status": "OK"})
 
+
 @app_views.route('/stats')
 def object_stats():
     """ return states of each object type """
- 
+
     results = {}
     for key, value in classes.items():
         results[key] = storage.count(value)
