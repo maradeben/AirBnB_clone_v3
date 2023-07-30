@@ -134,7 +134,7 @@ class TestFileStorage(unittest.TestCase):
     def test_count(self):
         """ test the count method """
         old_count = storage.count("State")
-        new_state1 = State(name="Laogs")
+        new_state1 = State(name="Lagos")
         storage.new(new_state1)
         new_state2 = State(name="Abuja")
         storage.new(new_state2)
