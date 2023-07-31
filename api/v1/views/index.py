@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ index within views """
 from api.v1.views import app_views
+from flask import jsonify
 from models import storage
 from models.amenity import Amenity
 from models.city import City
@@ -17,7 +18,7 @@ classes = {"amenities": Amenity, "cities": City,
 @app_views.route('/status')
 def views_status():
     """ return status of views """
-    return ({"status": "OK"})
+    return jsonify({"status": "OK"})
 
 
 @app_views.route('/stats')
@@ -27,4 +28,4 @@ def object_stats():
     results = {}
     for key, value in classes.items():
         results[key] = storage.count(value)
-    return (results)
+    return jsonify(results)
